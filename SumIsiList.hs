@@ -12,5 +12,5 @@ isOneElmt l = (length l) == 1
 sumIsiList :: [Int] -> Int
 -- { menerima masukan sebuah list of integer, misalnya l, yang tidak kosong dan menghasilkan penjumlahan semua elemen list l }
 -- REALISASI
-sumList l = if (isOneElmt l) then (head l) --basis
-            else (head l) + sumList (tail l) --rkurens
+sumIsiList l = if (isOneElmt l) then (head l) --basis
+            else (head l) + sumIsiList (tail l) --rkurens
