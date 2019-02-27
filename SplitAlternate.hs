@@ -1,4 +1,9 @@
-
+-- 8. Tuliskan realisasi dari fungsi splitAlternate berikut ini:
+splitAlternate :: [Char] -> ([Char],[Char])
+{- splitAlternate(l) menghasilkan dua buah list, misalnya
+   l1 dan l2. l1 berisi semua elemen l pada posisi
+   ganjil, l2 berisi semua elemen l pada posisi genap -}
+   
 splitAlternate :: [Char]-> ([Char],[Char])
 
 splitAlternate l =
