@@ -31,8 +31,7 @@ isOneElmt l = (length l) == 1
 -- DEFINISI DAN SPESIFIKASI
 filterGanjil :: [Int] -> [Int]
 -- { filterGanjil menghapus semua kemunculan genap pada l, sehingga kembalian dari fungsi adalah list of integer (l) yang tidak memiliki elemen genap}
--- { elementSetelahX membuat list berisikan elemen setelah x pada list input}
 -- REALISASI
 filterGanjil l = if (isEmpty l) then l -- basis
-                   else if (mod (head l) 2 == 1) then  konso (head l) (filterGanjil (tail l) x)
-                        else filterGanjil (tail l) x --recc
+                   else if (mod (head l) 2 == 1) then  konso (head l) (filterGanjil (tail l))
+                        else filterGanjil (tail l) --recc
