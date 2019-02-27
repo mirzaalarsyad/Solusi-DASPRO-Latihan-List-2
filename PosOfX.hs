@@ -1,8 +1,9 @@
--- 6. Tuliskan realisasi dari fungsi isUnique berikut ini:
-isUnique :: [Char] -> Bool
-{- isUnique(lc) menghasilkan true jika lc adalah list
-   dengan elemen unik, yaitu tidak ada elemen pada lc
-   yang muncul lebih dari 1 kali -}
+-- 7. Tuliskan realisasi dari fungsi posOfX berikut ini:
+posOfX :: Char -> [Char] -> Int
+{- posOfX(e,lc) menghasilkan sebuah bilangan integer yang
+   menyatakan posisi e pada list of character lc. Jika e
+   bukan elemen dari lc, fungsi akan menghasilkan 0.
+   Prekondisi: lc memiliki elemen unik -}
    
 -- DEFINISI DAN SPESIFIKASI KONSTRUKTOR
 konso :: Char -> [Char] -> [Char]
@@ -28,13 +29,14 @@ isOneElmt :: [Char] -> Bool
 -- REALISASI
 isOneElmt l = (length l) == 1
 
-munculSekali :: Char -> [Char] -> Int
--- Mengembalikan nilai 1 jika char hanya muncul sekali
+isElmtOf :: Char -> [Char] -> Bool
+-- True jika c elemen dari l
+isElmtOf c l | isEmpty l = False --basis
+             | c == head l = True || (isElmtOf c (tail l))
+             | otherwise = False || (isElmtOf c (tail l))
 
 -- REALISASI
-munculSekali c lc | isEmpty lc = 0 --basis
-                  | c == head lc = 1 + (munculSekali c (tail lc)) --recc
-                  | otherwise = munculSekali c (tail lc)
-isUnique lc | isEmpty lc = True --basis
-            | munculSekali (head lc) lc == 1 = True && isUnique (tail lc) --recc
-            | otherwise = False
+
+posOfX c lc | isEmpty lc = 0 --basis
+            | isElmtOf c lc == False = 0 --basis
+            | otherwise = if (c /= head lc) then 1 + (posOfX c (tail lc)) else 1 --recc

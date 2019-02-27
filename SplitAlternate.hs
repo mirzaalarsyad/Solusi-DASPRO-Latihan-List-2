@@ -1,3 +1,4 @@
+
 splitAlternate :: [Char]-> ([Char],[Char])
 
 splitAlternate l =
@@ -9,4 +10,4 @@ splitAlternate l =
                        |otherwise= [head (tail l)] ++ even (tail(tail l))
             in
                 (odd l, even l)
-      
+     
