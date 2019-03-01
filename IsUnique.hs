@@ -6,25 +6,25 @@ isUnique :: [Char] -> Bool
    
 -- DEFINISI DAN SPESIFIKASI KONSTRUKTOR
 konso :: Char -> [Char] -> [Char]
-{- konso e li menghasilkan sebuah list of integer dari e (sebuah integer) dan li 
-   (list of integer), dengan e sebagai elemen pertama: e o li -> li' -}
+{- konso e lc menghasilkan sebuah list of char dari e (sebuah char) dan lc
+   (list of char), dengan e sebagai elemen pertama: e o lc -> lc' -}
 -- REALISASI
-konso e li = [e] ++ li
+konso e lc = [e] ++ lc
 
 konsDot :: [Char] -> Char -> [Char]
-{- konsDot li e menghasilkan sebuah list of integer dari li (list of integer) dan 
-   e (sebuah integer), dengan e sebagai elemen terakhir: li o e -> li' -}
+{- konsDot lc e menghasilkan sebuah list of c dari li (list of char) dan 
+   e (sebuah char), dengan e sebagai elemen terakhir: lc o e -> lc' -}
 -- REALISASI
-konsDot li e = li ++ [e]
+konsDot lc e = lc ++ [e]
 
 -- DEFINISI DAN SPESIFIKASI PREDIKAT
 isEmpty :: [Char] -> Bool
--- isEmpty l  true jika list of integer l kosong
+-- isEmpty l  true jika list of char l kosong
 -- REALISASI
 isEmpty l = null l
 
 isOneElmt :: [Char] -> Bool
--- isOneElmt l true jika list of integer l hanya mempunyai satu elemen
+-- isOneElmt l true jika list of char l hanya mempunyai satu elemen
 -- REALISASI
 isOneElmt l = (length l) == 1
 
